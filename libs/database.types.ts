@@ -4,70 +4,69 @@ export type Json =
   | boolean
   | null
   | { [key: string]: Json | undefined }
-  | Json[]
+  | Json[];
 
 export interface Database {
   public: {
     Tables: {
       active_download_users: {
         Row: {
-          created_at: string
-          id: number
-          submission_id: number
-        }
+          created_at: string;
+          id: string;
+          submission_id: number;
+        };
         Insert: {
-          created_at?: string
-          id?: number
-          submission_id: number
-        }
+          created_at?: string;
+          id?: string;
+          submission_id: number;
+        };
         Update: {
-          created_at?: string
-          id?: number
-          submission_id?: number
-        }
+          created_at?: string;
+          id?: string;
+          submission_id?: number;
+        };
         Relationships: [
           {
-            foreignKeyName: "active_download_users_submission_id_fkey"
-            columns: ["submission_id"]
-            referencedRelation: "submissions"
-            referencedColumns: ["id"]
-          }
-        ]
-      }
+            foreignKeyName: "active_download_users_submission_id_fkey";
+            columns: ["submission_id"];
+            referencedRelation: "submissions";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
       submissions: {
         Row: {
-          created_at: string
-          email: string
-          id: number
-          name: string
-        }
+          created_at: string;
+          email: string;
+          id: number;
+          name: string;
+        };
         Insert: {
-          created_at?: string
-          email: string
-          id?: number
-          name: string
-        }
+          created_at?: string;
+          email: string;
+          id?: number;
+          name: string;
+        };
         Update: {
-          created_at?: string
-          email?: string
-          id?: number
-          name?: string
-        }
-        Relationships: []
-      }
-    }
+          created_at?: string;
+          email?: string;
+          id?: number;
+          name?: string;
+        };
+        Relationships: [];
+      };
+    };
     Views: {
-      [_ in never]: never
-    }
+      [_ in never]: never;
+    };
     Functions: {
-      [_ in never]: never
-    }
+      [_ in never]: never;
+    };
     Enums: {
-      [_ in never]: never
-    }
+      [_ in never]: never;
+    };
     CompositeTypes: {
-      [_ in never]: never
-    }
-  }
+      [_ in never]: never;
+    };
+  };
 }
-

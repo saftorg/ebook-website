@@ -9,21 +9,22 @@ export default defineEventHandler(async (event) => {
   const { data, error } = await client
     .from("active_download_users")
     .select()
-    .eq("submission_id", query.id);
+    .eq("uid", query.id);
 
   if (error || data === null || data.length === 0) {
     throw createError({
       statusCode: 400,
       message:
         "Data does not exist. Either your link has expired or it is invalid.",
+      stack: undefined,
     });
   }
 
-  await client.from("active_download_users").delete().eq("id", data[0].id);
+  await client.from("active_download_users").delete().eq("uid", query.id);
 
   return sendRedirect(
     event,
-    "https://drive.google.com/uc?export=download&id=1xVzscEMQ68KvxpbfQdJoz4tQACmOHmG8",
+    "https://drive.google.com/uc?export=download&id=1PpWjUhe4SSeII5uusm5gAE60YPfFbw3B",
     302,
   );
 });

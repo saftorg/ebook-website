@@ -8,11 +8,23 @@ export default defineEventHandler(async (event) => {
     z.object({ name: z.string(), email: z.string().email() }),
   );
   const client = serverSupabaseClient<Database>(event);
-  const { error } = await client.from("submissions").insert([query]).select();
+  const { data, error: submissionsError } = await client
+    .from("submissions")
+    .insert([query])
+    .select();
 
-  if (error) {
-    console.error(error);
-    throw createError(JSON.stringify(error, null, 2));
+  if (submissionsError) {
+    console.error(submissionsError);
+    throw createError(JSON.stringify(submissionsError, null, 2));
+  }
+
+  const { error: activeDownloadUsersError } = await client
+    .from("active_download_users")
+    .insert([{ submission_id: data[0].id }]);
+
+  if (!!activeDownloadUsersError) {
+    console.error(submissionsError);
+    throw createError(JSON.stringify(submissionsError, null, 2));
   }
 
   return sendRedirect(event, "/thank-you", 302);

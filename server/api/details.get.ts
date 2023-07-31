@@ -1,4 +1,4 @@
-import { serverSupabaseClient } from "#supabase/server";
+import { createClient } from "@supabase/supabase-js";
 import { Database } from "~/libs/database.types";
 import { useValidatedQuery, z } from "h3-zod";
 
@@ -7,7 +7,11 @@ export default defineEventHandler(async (event) => {
     event,
     z.object({ name: z.string(), email: z.string().email() }),
   );
-  const client = serverSupabaseClient<Database>(event);
+
+  const client = createClient<Database>(
+    process.env.SUPABASE_URL!,
+    process.env.SUPABASE_KEY!,
+  );
   const { data, error: submissionsError } = await client
     .from("submissions")
     .insert([query])

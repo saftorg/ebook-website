@@ -67,6 +67,5 @@ export default defineNuxtConfig({
     "@nuxtjs/fontaine",
     "nuxt-font-loader",
     "@vueuse/nuxt",
-    "@nuxtjs/supabase",
   ],
 });

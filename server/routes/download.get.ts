@@ -1,10 +1,13 @@
 import { useValidatedQuery, z } from "h3-zod";
 import { Database } from "../../libs/database.types";
-import { serverSupabaseClient } from "#supabase/server";
+import { createClient } from "@supabase/supabase-js";
 
 export default defineEventHandler(async (event) => {
   const query = await useValidatedQuery(event, z.object({ id: z.string() }));
-  const client = serverSupabaseClient<Database>(event);
+  const client = createClient<Database>(
+    process.env.SUPABASE_URL!,
+    process.env.SUPABASE_KEY!,
+  );
 
   const { data, error } = await client
     .from("active_download_users")

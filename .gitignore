@@ -22,3 +22,6 @@ logs
 .env.*
 !.env.example
 yarn.lock
+
+# Local Netlify folder
+.netlify

@@ -62,7 +62,6 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    "@hypernym/nuxt-anime",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/fontaine",
     "nuxt-font-loader",

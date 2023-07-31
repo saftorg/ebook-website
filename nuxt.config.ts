@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   experimental: { componentIslands: true },
+  routeRules: {
+    "/download": { proxy: "https://eoud52nizwd34y1.m.pipedream.net" },
+  },
 
   devtools: {
     enabled: true,

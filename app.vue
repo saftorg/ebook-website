@@ -25,8 +25,9 @@
       </div>
       <h2 class="font-joyride text-5xl md:text-8xl uppercase">Ebook</h2>
     </div>
-    <div
+    <form
       class="border border-white/50 rounded-lg bg-white/10 backdrop-blur p-6 -mt-5 md:-mt-10"
+      action="https://submit-form.com/H5NZeUf5"
     >
       <h3 class="text-center text-2xl md:text-3xl mb-4">
         Get your <b>free</b> ebook!
@@ -38,7 +39,7 @@
       >
         Get Ebook
       </button>
-    </div>
+    </form>
   </div>
 </template>
 

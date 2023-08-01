@@ -9,7 +9,7 @@ onMounted(() => {
   });
 
   gsap.set("#free-ebook-parent", { translateY: "100%" });
-  gsap.set(".path", { opacity: 0.5 });
+  gsap.set(".path", { opacity: 1 });
 
   tl.fromTo(
     "#free",

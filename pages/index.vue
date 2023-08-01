@@ -5,14 +5,15 @@ onMounted(() => {
   const tl = gsap.timeline({
     autoplay: true,
     loop: false,
+    delay: 0.5,
   });
 
   gsap.set("#free-ebook-parent", { translateY: "100%" });
-  gsap.set(".path", { opacity: 1 });
+  gsap.set(".path", { opacity: 0.5 });
 
   tl.fromTo(
     "#free",
-    { scale: 1.1, opacity: 0, ease: "expo.inOut" },
+    { scale: 1.1, opacity: 0, ease: "expo.out" },
     {
       scale: 1,
       opacity: 1,
@@ -26,7 +27,7 @@ onMounted(() => {
     {
       scale: 1,
       opacity: 1,
-      ease: "expo.inOut",
+      ease: "expo.out",
       duration: 1,
     },
     0.15,
@@ -67,10 +68,8 @@ onMounted(() => {
 <template>
   <div class="grid place-content-center isolate h-screen">
     <div id="free-ebook-parent" class="max-w-4xl text-center z-[-1]">
-      <div class="relative grid place-items-center h-7 md:h-10 mb-4">
-        <div
-          class="col-start-1 row-start-1 mix-blend-overlay w-50 h-10 mx-auto mb-8"
-        >
+      <div class="relative grid place-items-center h-10 mb-3 md:mb-4">
+        <div class="col-start-1 row-start-1 w-50 h-10 mx-auto mb-8">
           <svg
             width="282"
             height="67"
@@ -84,8 +83,7 @@ onMounted(() => {
               stroke-dasharray="1"
               stroke-dashoffset="1"
               pathLength="1"
-              class="path opacity-0"
-              style="mix-blend-mode: overlay"
+              class="path opacity-0 mix-blend-overlay bg-white"
             />
           </svg>
         </div>

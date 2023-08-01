@@ -31,6 +31,6 @@ body {
   @apply h-screen;
   @apply w-screen;
   @apply overflow-hidden;
-  background-color: #3445ce;
+  @apply bg-[#3445ce];
 }
 </style>

@@ -113,7 +113,7 @@ onMounted(() => {
         <Input title="first_name" type="text" required placeholder="John" />
         <Input title="last_name" type="text" placeholder="Doe" />
       </div>
-      <Input title="email" type="email" placeholder="you@domain.com" required />
+      <Input title="email" type="email" placeholder="john@doe.com" required />
       <input
         type="submit"
         class="mt-8 bg-white transition shadow-black/10 shadow-lg hover:scale-[1.02] text-lg py-2 px-6 text-[#060E53] rounded w-full cursor-pointer"

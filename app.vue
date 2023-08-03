@@ -1,5 +1,5 @@
 <template>
-  <div class="isolate px-4 md:px-0">
+  <div class="isolate px-4 md:px-0 overflow-hidden relative">
     <img
       src="~/assets/purple-blurb.svg"
       alt="purple blurb"

@@ -83,7 +83,7 @@ onMounted(() => {
               stroke-dasharray="1"
               stroke-dashoffset="1"
               pathLength="1"
-              class="path opacity-0 mix-blend-overlay bg-white"
+              class="path opacity-0 bg-white"
             />
           </svg>
         </div>

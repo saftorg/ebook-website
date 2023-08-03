@@ -39,19 +39,22 @@ export interface Database {
           created_at: string;
           email: string;
           id: number;
-          name: string;
+          first_name: string;
+          last_name: string;
         };
         Insert: {
           created_at?: string;
           email: string;
           id?: number;
-          name: string;
+          first_name: string;
+          last_name?: string;
         };
         Update: {
           created_at?: string;
           email?: string;
           id?: number;
-          name?: string;
+          first_name?: string;
+          last_name?: string;
         };
         Relationships: [];
       };

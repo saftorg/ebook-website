@@ -1,22 +1,21 @@
 <script lang="ts" setup>
 import { sentenceCase } from "change-case";
-import { InputHTMLAttributes } from "nuxt/dist/app/compat/capi";
 
 const props = withDefaults(
-  defineProps<{ title: string; type: InputHTMLAttributes["type"] }>(),
-  {
-    type: "text",
-  },
+  defineProps<{
+    title: string;
+  }>(),
+  {},
 );
 </script>
 <template>
   <label class="grid text-lg" :for="props.title">
     {{ sentenceCase(props.title) }}
     <input
-      class="rounded border bg-transparent py-2 px-5"
-      :type="props.type"
+      class="rounded border placeholder:text-white/25 bg-transparent py-2 px-5 [&:not(:placeholder-shown)]:invalid:[&:not(:focus)]:border-red-500"
       :id="props.title"
       :name="props.title"
+      v-bind="$attrs"
     />
   </label>
 </template>

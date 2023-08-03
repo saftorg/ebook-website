@@ -5,7 +5,11 @@ import { useValidatedQuery, z } from "h3-zod";
 export default defineEventHandler(async (event) => {
   const query = await useValidatedQuery(
     event,
-    z.object({ name: z.string(), email: z.string().email() }),
+    z.object({
+      first_name: z.string(),
+      last_name: z.string().optional(),
+      email: z.string().email(),
+    }),
   );
 
   const client = createClient<Database>(

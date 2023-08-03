@@ -68,7 +68,7 @@ onMounted(() => {
 <template>
   <div class="grid place-content-center isolate h-screen">
     <div id="free-ebook-parent" class="max-w-4xl text-center z-[-1]">
-      <div class="relative grid place-items-center h-10 mb-3 md:mb-4">
+      <div class="relative grid place-items-center h-10 mb-2 md:mb-4">
         <div class="col-start-1 row-start-1 w-50 h-10 mx-auto mb-8">
           <svg
             width="282"
@@ -109,13 +109,16 @@ onMounted(() => {
       <h3 class="text-center text-2xl md:text-3xl mb-4">
         Get your <b>free</b> ebook!
       </h3>
-      <Input title="name" type="text" class="my-4" />
-      <Input title="email" type="email" />
-      <button
-        class="mt-8 bg-white transition shadow-black/10 shadow-lg hover:scale-[1.02] text-lg py-2 px-6 text-[#060E53] rounded w-full"
-      >
-        Get Ebook
-      </button>
+      <div class="grid md:flex gap-2 md:gap-4 mb-4">
+        <Input title="first_name" type="text" required placeholder="John" />
+        <Input title="last_name" type="text" placeholder="Doe" />
+      </div>
+      <Input title="email" type="email" placeholder="you@domain.com" required />
+      <input
+        type="submit"
+        class="mt-8 bg-white transition shadow-black/10 shadow-lg hover:scale-[1.02] text-lg py-2 px-6 text-[#060E53] rounded w-full cursor-pointer"
+        value="Get Ebook"
+      />
     </form>
   </div>
 </template>

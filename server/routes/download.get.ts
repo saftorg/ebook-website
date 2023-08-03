@@ -25,9 +25,5 @@ export default defineEventHandler(async (event) => {
 
   await client.from("active_download_users").delete().eq("uid", query.id);
 
-  return sendRedirect(
-    event,
-    "https://drive.google.com/uc?export=download&id=1PpWjUhe4SSeII5uusm5gAE60YPfFbw3B",
-    302,
-  );
+  return sendRedirect(event, process.env.PDF_DOWNLOAD_LINK!, 302);
 });
